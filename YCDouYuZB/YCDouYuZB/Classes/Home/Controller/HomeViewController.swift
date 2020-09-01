@@ -8,13 +8,52 @@
 
 import UIKit
 
+private let kTitleViewH : CGFloat = 40
+
 class HomeViewController: UIViewController {
 
+    // MARK: - 懒加载属性
+    private lazy var pageTitleView : PageTitleView = { [weak self] in
+        let titleFrame = CGRect(x: 0, y: kNavigationBarH, width: kScreenW, height: kTitleViewH)
+        let titles = ["推荐","游戏","娱乐","趣玩"]
+        let titleView = PageTitleView(frame: titleFrame, titles: titles)
+        titleView.delegate = self
+        return titleView
+    }()
+    
+    private lazy var pageContentView: PageContentView = { [weak self] in
+        
+        // 1. 确定内容的frame
+        let contentY = kNavigationBarH + kTitleViewH
+        let contentH = kScreenH - contentY
+        let contentFrame = CGRect(x: 0, y: contentY, width: kScreenW, height: contentH)
+        // 2. 确定所以的子控制器
+        var childVcs = [UIViewController]()
+        for _ in 0..<4 {
+            let vc = UIViewController()
+            let backgroundColor : CGFloat = CGFloat(arc4random_uniform(255))
+            vc.view.backgroundColor = UIColor(r: backgroundColor, g: backgroundColor, b: backgroundColor)
+            childVcs.append(vc)
+        }
+    
+       let contentView = PageContentView(frame: contentFrame, childVcs: childVcs, parentViewController: self)
+        
+        return contentView
+    }()
+    
+    
+    // MARK: - 系统回调函数
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // 1. 设置UI
         setupUI()
+        
+        // 2. 添加TitleView
+        view.addSubview(pageTitleView)
+        
+        // 3. 添加contentView
+        view.addSubview(pageContentView)
 
     }
 
@@ -25,6 +64,9 @@ class HomeViewController: UIViewController {
 extension HomeViewController {
     
     private func setupUI(){
+        // 0. 不需要调整UIScrollView的内边距
+        automaticallyAdjustsScrollViewInsets = false
+        
         // 1. 设置导航栏
         setupNavigationBar()
     }
@@ -46,6 +88,13 @@ extension HomeViewController {
         
     }
     
-    
-    
 }
+
+// MARK: - 遵守 PageTitleViewDelegate 协议
+extension HomeViewController : PageTitleViewDelegate {
+    
+    func pageTitleView(titleView: PageTitleView, selectedIndex index: Int) {
+        pageContentView.setCurrentIndex(currentIndex: index)
+    }
+}
+
