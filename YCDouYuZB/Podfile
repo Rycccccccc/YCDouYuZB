@@ -8,6 +8,7 @@ target 'YCDouYuZB' do
 
 
 pod 'Alamofire'
+pod 'KakaJSON'
 
   # Pods for YCDouYuZB
 
