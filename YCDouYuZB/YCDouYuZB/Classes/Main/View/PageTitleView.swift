@@ -142,8 +142,8 @@ extension PageTitleView {
         
         // 2. 获取之前的label
         let oldLabel = titleLabels[currentIndex]
-        
-        if oldLabel.tag == currentLabel.tag { return }
+        // 2.1 处理再次点击自己的逻辑，直接返回
+        if oldLabel == currentLabel { return }
         
         // 3. 切换文字的颜色
         currentLabel.textColor = UIColor(r: kSelectColor.0, g: kSelectColor.1, b: kSelectColor.2)
@@ -193,9 +193,7 @@ extension PageTitleView {
                                         b: kNormalColor.2 + colorDelta.2 * progress)
         
         // 4 记录当前滚动到的位置
-        if progress == 1 {
-            currentIndex = targetIndex;
-        }
+        currentIndex = targetIndex;
     }
     
 }
