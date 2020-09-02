@@ -172,7 +172,7 @@ extension PageContentView : UICollectionViewDelegate {
         
         // 3. 将progress, tagetIndex, sourceIndex 传给titleView
         
-        print("progress:\(progress)   sourceIndex:\(scourceIndex)  targetIndex:\(targetIndex)")
+//        print("progress:\(progress)   sourceIndex:\(scourceIndex)  targetIndex:\(targetIndex)")
         
         delegate?.pageContentView(contentView: self, progress: progress, sourceIndex: scourceIndex, targetIndex: targetIndex)
         

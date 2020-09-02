@@ -29,7 +29,8 @@ class HomeViewController: UIViewController {
         let contentFrame = CGRect(x: 0, y: contentY, width: kScreenW, height: contentH)
         // 2. 确定所以的子控制器
         var childVcs = [UIViewController]()
-        for _ in 0..<4 {
+        childVcs.append(RecommendViewController())
+        for _ in 0..<3 {
             let vc = UIViewController()
             let backgroundColor : CGFloat = CGFloat(arc4random_uniform(255))
             vc.view.backgroundColor = UIColor(r: backgroundColor, g: backgroundColor, b: backgroundColor)

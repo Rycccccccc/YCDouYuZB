@@ -18,6 +18,11 @@
 		0503B3C124FD379C00868538 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0503B3C024FD379C00868538 /* Common.swift */; };
 		0503B3C324FD484300868538 /* PageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0503B3C224FD484300868538 /* PageContentView.swift */; };
 		0503B3C524FD4A8F00868538 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0503B3C424FD4A8F00868538 /* UIColor+Extension.swift */; };
+		052E1C3E24FF3BC600EF6CF2 /* RecommendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052E1C3D24FF3BC600EF6CF2 /* RecommendViewController.swift */; };
+		052E1C4124FF458800EF6CF2 /* CollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052E1C3F24FF458800EF6CF2 /* CollectionHeaderView.swift */; };
+		052E1C4224FF458800EF6CF2 /* CollectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 052E1C4024FF458800EF6CF2 /* CollectionHeaderView.xib */; };
+		052E1C4524FF48F100EF6CF2 /* CollectionViewNormalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052E1C4324FF48F100EF6CF2 /* CollectionViewNormalCell.swift */; };
+		052E1C4624FF48F100EF6CF2 /* CollectionViewNormalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 052E1C4424FF48F100EF6CF2 /* CollectionViewNormalCell.xib */; };
 		05E3104E24FCFF5200552629 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E3104D24FCFF5200552629 /* AppDelegate.swift */; };
 		05E3105524FCFF5200552629 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05E3105324FCFF5200552629 /* Main.storyboard */; };
 		05E3105724FCFF5400552629 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05E3105624FCFF5400552629 /* Assets.xcassets */; };
@@ -56,6 +61,11 @@
 		0503B3C024FD379C00868538 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		0503B3C224FD484300868538 /* PageContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageContentView.swift; sourceTree = "<group>"; };
 		0503B3C424FD4A8F00868538 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		052E1C3D24FF3BC600EF6CF2 /* RecommendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendViewController.swift; sourceTree = "<group>"; };
+		052E1C3F24FF458800EF6CF2 /* CollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionHeaderView.swift; sourceTree = "<group>"; };
+		052E1C4024FF458800EF6CF2 /* CollectionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionHeaderView.xib; sourceTree = "<group>"; };
+		052E1C4324FF48F100EF6CF2 /* CollectionViewNormalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewNormalCell.swift; sourceTree = "<group>"; };
+		052E1C4424FF48F100EF6CF2 /* CollectionViewNormalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewNormalCell.xib; sourceTree = "<group>"; };
 		05E3104A24FCFF5200552629 /* YCDouYuZB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YCDouYuZB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05E3104D24FCFF5200552629 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05E3105424FCFF5200552629 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -99,6 +109,8 @@
 		0503B3B124FD283100868538 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				052E1C3F24FF458800EF6CF2 /* CollectionHeaderView.swift */,
+				052E1C4024FF458800EF6CF2 /* CollectionHeaderView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -115,6 +127,7 @@
 			children = (
 				0503B39324FD0FEB00868538 /* Home.storyboard */,
 				0503B3B724FD28DD00868538 /* HomeViewController.swift */,
+				052E1C3D24FF3BC600EF6CF2 /* RecommendViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -131,6 +144,8 @@
 			children = (
 				0503B3BE24FD35D400868538 /* PageTitleView.swift */,
 				0503B3C224FD484300868538 /* PageContentView.swift */,
+				052E1C4324FF48F100EF6CF2 /* CollectionViewNormalCell.swift */,
+				052E1C4424FF48F100EF6CF2 /* CollectionViewNormalCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -375,9 +390,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				05E3105A24FCFF5400552629 /* LaunchScreen.storyboard in Resources */,
+				052E1C4224FF458800EF6CF2 /* CollectionHeaderView.xib in Resources */,
 				05E3105724FCFF5400552629 /* Assets.xcassets in Resources */,
 				05E3105524FCFF5200552629 /* Main.storyboard in Resources */,
 				0503B39524FD0FEB00868538 /* Home.storyboard in Resources */,
+				052E1C4624FF48F100EF6CF2 /* CollectionViewNormalCell.xib in Resources */,
 				0503B3AC24FD130B00868538 /* Follow.storyboard in Resources */,
 				0503B3A024FD10FD00868538 /* Profile.storyboard in Resources */,
 				0503B3A924FD12F600868538 /* Live.storyboard in Resources */,
@@ -406,14 +423,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				0503B3BF24FD35D400868538 /* PageTitleView.swift in Sources */,
+				052E1C4124FF458800EF6CF2 /* CollectionHeaderView.swift in Sources */,
 				0503B3BD24FD2DA100868538 /* UIBarButtonItem-Extension.swift in Sources */,
 				0503B3B024FD25D400868538 /* MainViewController.swift in Sources */,
 				0503B3C524FD4A8F00868538 /* UIColor+Extension.swift in Sources */,
+				052E1C4524FF48F100EF6CF2 /* CollectionViewNormalCell.swift in Sources */,
 				0503B3C324FD484300868538 /* PageContentView.swift in Sources */,
 				05E3104E24FCFF5200552629 /* AppDelegate.swift in Sources */,
 				05E3108524FD0C9300552629 /* SceneDelegate.swift in Sources */,
 				0503B3B824FD28DD00868538 /* HomeViewController.swift in Sources */,
 				0503B3C124FD379C00868538 /* Common.swift in Sources */,
+				052E1C3E24FF3BC600EF6CF2 /* RecommendViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

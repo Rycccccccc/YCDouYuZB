@@ -14,6 +14,7 @@ let kNavigationBarH : CGFloat = kStatusBarH + kNaviBarContentH
 
 
 let kTabBarSafeAreaH : CGFloat = kIsFullScreen ? 34 : 0
+let kTabBarH : CGFloat = kTabBarSafeAreaH + 44;
 
 
 let kScreenW = UIScreen.main.bounds.size.width
