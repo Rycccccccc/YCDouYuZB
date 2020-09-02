@@ -18,4 +18,7 @@ struct AnchorGroup: Convertible {
     // 该组显示的图标
     var icon_name: String = "home_header_normal"
     
+    init() {
+        
+    }
 }

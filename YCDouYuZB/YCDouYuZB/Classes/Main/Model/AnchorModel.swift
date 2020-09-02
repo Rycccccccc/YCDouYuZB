@@ -23,4 +23,7 @@ struct AnchorModel: Convertible {
     var nickname: String = ""
     // 在线人数
     var online: String = ""
+    // 所在城市
+    var anchor_city: String = ""
+    
 }

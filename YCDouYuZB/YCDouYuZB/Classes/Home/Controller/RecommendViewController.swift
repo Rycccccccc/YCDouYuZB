@@ -80,7 +80,9 @@ extension RecommendViewController {
     
     private func loadData() {
         
-        recommendVM.requestData()
+        recommendVM.requestData { [weak self] in
+            self?.collectionView.reloadData()
+        }
     }
     
 }
@@ -92,14 +94,12 @@ extension RecommendViewController: UICollectionViewDataSource,UICollectionViewDe
     
     // MARK: - UICollectionViewDataSource
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 12
+        return recommendVM.anchorGroups.count
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if section == 0 {
-            return 8
-        }
-        return 4
+        let group = recommendVM.anchorGroups[section]
+        return group.room_list?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -118,7 +118,9 @@ extension RecommendViewController: UICollectionViewDataSource,UICollectionViewDe
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         // 1. 取出section的HeaderView
-        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: kHeaderViewID, for: indexPath)
+        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: kHeaderViewID, for: indexPath) as! CollectionHeaderView
+        
+        headerView.group = recommendVM.anchorGroups[indexPath.section]
         
         return headerView
     }

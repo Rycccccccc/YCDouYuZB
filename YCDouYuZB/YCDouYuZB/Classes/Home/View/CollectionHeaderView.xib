@@ -56,6 +56,10 @@
                 <constraint firstAttribute="trailing" secondItem="qBg-hs-S5d" secondAttribute="trailing" constant="10" id="oEa-ys-7ga"/>
                 <constraint firstItem="2sf-D9-M2l" firstAttribute="top" secondItem="LQs-Kg-wW1" secondAttribute="bottom" constant="11" id="pcE-1M-M35"/>
             </constraints>
+            <connections>
+                <outlet property="iconImageView" destination="2sf-D9-M2l" id="tci-X2-JK2"/>
+                <outlet property="titleLabel" destination="JGL-hZ-vkD" id="mX1-wI-KJq"/>
+            </connections>
             <point key="canvasLocation" x="108.69565217391305" y="96.428571428571431"/>
         </collectionReusableView>
     </objects>
