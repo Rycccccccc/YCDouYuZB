@@ -16,7 +16,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="299" height="373"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2f4-m5-3Ur">
+                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2f4-m5-3Ur">
                         <rect key="frame" x="0.0" y="349" width="60" height="14"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="14" id="DbX-cg-iba"/>
@@ -45,39 +45,46 @@
                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                         </userDefinedRuntimeAttributes>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1000在线" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Htf-sf-MAl">
-                        <rect key="frame" x="234" y="5" width="60" height="20"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.11764705882352941" alpha="0.5" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tdy-x6-Z7W">
+                        <rect key="frame" x="231" y="8" width="60" height="20"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="20" id="SJ6-oL-Tpn"/>
-                            <constraint firstAttribute="width" constant="60" id="X98-YI-oQd"/>
+                            <constraint firstAttribute="width" constant="60" id="DMR-hS-CNN"/>
+                            <constraint firstAttribute="height" constant="20" id="aqt-Gq-Q1j"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
+                        <state key="normal" title="666在线">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                 <integer key="value" value="3"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                         </userDefinedRuntimeAttributes>
-                    </label>
+                    </button>
                 </subviews>
             </view>
             <constraints>
                 <constraint firstItem="ghe-an-NPr" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="01q-fU-e5E"/>
                 <constraint firstItem="ghe-an-NPr" firstAttribute="top" secondItem="Zu2-5L-dHO" secondAttribute="bottom" constant="5" id="5cc-DQ-1ts"/>
                 <constraint firstItem="Zu2-5L-dHO" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="CpE-fr-TQ6"/>
-                <constraint firstItem="Htf-sf-MAl" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="HAR-zH-zDT"/>
-                <constraint firstAttribute="trailing" secondItem="Htf-sf-MAl" secondAttribute="trailing" constant="5" id="Iqy-fx-sI3"/>
                 <constraint firstItem="Zu2-5L-dHO" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Jc9-LZ-py5"/>
                 <constraint firstAttribute="bottom" secondItem="2f4-m5-3Ur" secondAttribute="bottom" constant="10" id="UP9-be-Qmm"/>
                 <constraint firstItem="2f4-m5-3Ur" firstAttribute="top" secondItem="ghe-an-NPr" secondAttribute="bottom" constant="5" id="bfm-d0-Ld4"/>
                 <constraint firstAttribute="trailing" secondItem="ghe-an-NPr" secondAttribute="trailing" constant="5" id="fFJ-y9-neT"/>
                 <constraint firstItem="2f4-m5-3Ur" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="mIr-d8-q35"/>
+                <constraint firstItem="tdy-x6-Z7W" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="vfh-4F-6SV"/>
+                <constraint firstAttribute="trailing" secondItem="tdy-x6-Z7W" secondAttribute="trailing" constant="8" id="xCV-wI-ybU"/>
                 <constraint firstAttribute="trailing" secondItem="Zu2-5L-dHO" secondAttribute="trailing" id="xTX-dg-mkI"/>
             </constraints>
             <size key="customSize" width="299" height="373"/>
+            <connections>
+                <outlet property="cityBtn" destination="2f4-m5-3Ur" id="MMi-JZ-c01"/>
+                <outlet property="iconImgView" destination="Zu2-5L-dHO" id="bOr-Na-opm"/>
+                <outlet property="nickNameLabel" destination="ghe-an-NPr" id="Ya7-Q2-JO0"/>
+                <outlet property="onlineBtn" destination="tdy-x6-Z7W" id="qxd-M1-4C4"/>
+            </connections>
             <point key="canvasLocation" x="25.362318840579711" y="69.308035714285708"/>
         </collectionViewCell>
     </objects>
