@@ -1,0 +1,6 @@
+framework module Pods_YCDouYuZB {
+  umbrella header "Pods-YCDouYuZB-umbrella.h"
+
+  export *
+  module * { export * }
+}

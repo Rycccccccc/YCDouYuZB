@@ -6,7 +6,13 @@
 //  Copyright © 2020 renyichun. All rights reserved.
 //
 
+/*
+  
+ 
+ */
+
 import UIKit
+import Alamofire
 
 private let kTitleViewH : CGFloat = 40
 
