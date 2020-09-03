@@ -140,11 +140,12 @@ extension PageTitleView {
         // 1. 获取当前的label
         guard let currentLabel = tapGes.view as? UILabel else { return }
         
+        // 1.1 处理再次点击自己的逻辑，直接返回
+        if currentLabel.tag == currentIndex { return }
+        
         // 2. 获取之前的label
         let oldLabel = titleLabels[currentIndex]
-        // 2.1 处理再次点击自己的逻辑，直接返回
-        if oldLabel == currentLabel { return }
-        
+  
         // 3. 切换文字的颜色
         currentLabel.textColor = UIColor(r: kSelectColor.0, g: kSelectColor.1, b: kSelectColor.2)
         oldLabel.textColor = UIColor(r: kNormalColor.0, g: kNormalColor.1, b: kNormalColor.2)

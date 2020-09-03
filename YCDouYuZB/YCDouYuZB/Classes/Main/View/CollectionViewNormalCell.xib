@@ -72,7 +72,7 @@
             </constraints>
             <size key="customSize" width="141" height="96"/>
             <connections>
-                <outlet property="iconImageView" destination="N2k-ko-LxM" id="7fi-nz-eDY"/>
+                <outlet property="iconImgView" destination="N2k-ko-LxM" id="Y7Y-6F-BQN"/>
                 <outlet property="nickNameLabel" destination="h2f-gE-C0v" id="IT9-Fb-UCU"/>
                 <outlet property="onlineBtn" destination="knU-Em-AiR" id="Mx1-C7-BeZ"/>
                 <outlet property="roomNameLabel" destination="wGD-Vc-Omg" id="Jgy-NX-vGW"/>

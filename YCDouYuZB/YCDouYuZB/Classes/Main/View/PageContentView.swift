@@ -137,7 +137,8 @@ extension PageContentView : UICollectionViewDelegate {
         if currentOffsetX > startOffsetX {
             // 左划
             // 1. 计算progress
-            progress = currentOffsetX / scrollViewW - floor(currentOffsetX / scrollViewW)
+            let offsetScale: CGFloat = currentOffsetX / scrollViewW;
+            progress = (offsetScale) - floor(offsetScale)
             
             // 2. 计算sourceIndex
             scourceIndex = Int(currentOffsetX / scrollViewW)
@@ -171,7 +172,6 @@ extension PageContentView : UICollectionViewDelegate {
         }
         
         // 3. 将progress, tagetIndex, sourceIndex 传给titleView
-        
 //        print("progress:\(progress)   sourceIndex:\(scourceIndex)  targetIndex:\(targetIndex)")
         
         delegate?.pageContentView(contentView: self, progress: progress, sourceIndex: scourceIndex, targetIndex: targetIndex)
