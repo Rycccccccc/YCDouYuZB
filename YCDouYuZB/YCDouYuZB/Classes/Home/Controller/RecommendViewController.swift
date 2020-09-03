@@ -81,7 +81,12 @@ extension RecommendViewController {
     private func loadData() {
         
         recommendVM.requestData { [weak self] in
-            self?.collectionView.reloadData()
+            
+            DispatchQueue.main.async {
+                self?.collectionView.reloadData()
+            }
+            
+            
         }
     }
     

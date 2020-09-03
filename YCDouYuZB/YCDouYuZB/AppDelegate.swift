@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UITabBar.appearance().tintColor = UIColor.orange
         
-         // P14页 
+         // P22页 
         return true
     }
 

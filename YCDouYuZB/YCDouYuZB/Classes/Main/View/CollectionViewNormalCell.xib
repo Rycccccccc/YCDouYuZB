@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -39,15 +39,18 @@
                         </userDefinedRuntimeAttributes>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="直播描述" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wGD-Vc-Omg">
-                        <rect key="frame" x="5" y="48" width="45" height="14"/>
+                        <rect key="frame" x="5" y="48" width="68" height="14"/>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="knU-Em-AiR">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="knU-Em-AiR">
                         <rect key="frame" x="76" y="46" width="60" height="16"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                        <state key="normal" title="666在线" image="Image_online"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="60" id="rjF-RU-sqq"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                        <state key="normal" title="6646在线" image="Image_online"/>
                     </button>
                 </subviews>
             </view>
@@ -55,6 +58,7 @@
                 <constraint firstItem="N2k-ko-LxM" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="20L-th-SyX"/>
                 <constraint firstItem="knU-Em-AiR" firstAttribute="trailing" secondItem="N2k-ko-LxM" secondAttribute="trailing" constant="-5" id="2TS-y0-FhY"/>
                 <constraint firstItem="h2f-gE-C0v" firstAttribute="centerY" secondItem="wRq-Ef-vKA" secondAttribute="centerY" id="59U-PM-Wci"/>
+                <constraint firstItem="knU-Em-AiR" firstAttribute="leading" secondItem="wGD-Vc-Omg" secondAttribute="trailing" constant="3" id="6FB-jx-Y27"/>
                 <constraint firstItem="wRq-Ef-vKA" firstAttribute="top" secondItem="N2k-ko-LxM" secondAttribute="bottom" constant="5" id="6x2-QM-z9l"/>
                 <constraint firstAttribute="trailing" secondItem="N2k-ko-LxM" secondAttribute="trailing" id="9c4-R6-7hh"/>
                 <constraint firstItem="knU-Em-AiR" firstAttribute="bottom" secondItem="N2k-ko-LxM" secondAttribute="bottom" constant="-5" id="IWM-WA-KB4"/>
@@ -67,6 +71,12 @@
                 <constraint firstAttribute="bottom" secondItem="wRq-Ef-vKA" secondAttribute="bottom" constant="10" id="uGJ-pv-dFe"/>
             </constraints>
             <size key="customSize" width="141" height="96"/>
+            <connections>
+                <outlet property="iconImageView" destination="N2k-ko-LxM" id="7fi-nz-eDY"/>
+                <outlet property="nickNameLabel" destination="h2f-gE-C0v" id="IT9-Fb-UCU"/>
+                <outlet property="onlineBtn" destination="knU-Em-AiR" id="Mx1-C7-BeZ"/>
+                <outlet property="roomNameLabel" destination="wGD-Vc-Omg" id="Jgy-NX-vGW"/>
+            </connections>
             <point key="canvasLocation" x="203.62318840579712" y="117.1875"/>
         </collectionViewCell>
     </objects>

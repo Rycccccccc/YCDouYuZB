@@ -96,6 +96,7 @@ extension RecommendViewModel {
        
         // 所以的数据请求完成后，进行排序
         dispatchGroup.notify(queue: dispatchQueue) {
+            
             self.anchorGroups.insert(self.prettyGroups, at: 0)
             self.anchorGroups.insert(self.bigDataGroups, at: 0)
             

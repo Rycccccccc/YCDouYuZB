@@ -36,12 +36,9 @@ class HomeViewController: UIViewController {
         // 2. 确定所以的子控制器
         var childVcs = [UIViewController]()
         childVcs.append(RecommendViewController())
-        for _ in 0..<3 {
-            let vc = UIViewController()
-            let backgroundColor : CGFloat = CGFloat(arc4random_uniform(255))
-            vc.view.backgroundColor = UIColor(r: backgroundColor, g: backgroundColor, b: backgroundColor)
-            childVcs.append(vc)
-        }
+        childVcs.append(RecommendViewController())
+        childVcs.append(RecommendViewController())
+        childVcs.append(RecommendViewController())
     
        let contentView = PageContentView(frame: contentFrame, childVcs: childVcs, parentViewController: self)
         contentView.delegate = self
