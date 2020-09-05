@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CollectionGameCell" customModule="YCDouYuZB" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="80" height="90"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="80" height="90"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="英雄联盟" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ruS-Bt-RtK">
+                        <rect key="frame" x="0.0" y="65" width="80" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="YE3-vX-m7k"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_more_btn" translatesAutoresizingMaskIntoConstraints="NO" id="sX1-am-eSN" customClass="home_more_btn">
+                        <rect key="frame" x="17.5" y="15" width="45" height="45"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="sX1-am-eSN" secondAttribute="height" multiplier="80:19" constant="-144.4736842105263" id="l59-aA-sSd"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <real key="value" value="22.5"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="ruS-Bt-RtK" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="EWS-du-vTR"/>
+                <constraint firstAttribute="trailing" secondItem="ruS-Bt-RtK" secondAttribute="trailing" id="SSL-UH-Nda"/>
+                <constraint firstAttribute="bottom" secondItem="ruS-Bt-RtK" secondAttribute="bottom" constant="10" id="ehX-1r-Wdi"/>
+                <constraint firstItem="sX1-am-eSN" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="15" id="gA2-11-SF6"/>
+                <constraint firstItem="ruS-Bt-RtK" firstAttribute="top" secondItem="sX1-am-eSN" secondAttribute="bottom" constant="5" id="nWd-6y-q9H"/>
+                <constraint firstItem="sX1-am-eSN" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="whH-Ux-CX9"/>
+            </constraints>
+            <connections>
+                <outlet property="iconImageView" destination="sX1-am-eSN" id="R9M-Pg-Xv8"/>
+                <outlet property="titleLabel" destination="ruS-Bt-RtK" id="XkA-LW-dfP"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="94.419642857142847"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="home_more_btn" width="44" height="44"/>
+    </resources>
+</document>
