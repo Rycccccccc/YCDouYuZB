@@ -13,8 +13,8 @@ private let kCycleCellID = "kCycleCellID"
 
 class RecommendCycleView: UIView {
 
-    
     // MARK: - 定义属性
+    var cycleTimer: Timer?
     var cycleModels: [CycleModel]? {
 
         didSet {
@@ -25,6 +25,10 @@ class RecommendCycleView: UIView {
             // 3. 默认滚动到中间的位置
             let indexPath = NSIndexPath(item: (cycleModels?.count ?? 0) * 100, section: 0)
             collectionView.scrollToItem(at: indexPath as IndexPath, at: .left, animated: false)
+            
+            // 添加定时器
+            removeCycleTimer()
+            addCycleTimer()
         }
     }
     
@@ -94,5 +98,37 @@ extension RecommendCycleView: UICollectionViewDelegate {
     }
     
     
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        removeCycleTimer()
+    }
     
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        addCycleTimer()
+    }
+
+}
+
+
+// MARK: - 定时器操作方法
+extension RecommendCycleView {
+    
+    private func addCycleTimer() {
+        
+        cycleTimer = Timer(timeInterval: 3.0, target: self, selector: #selector(self.scrollToNext), userInfo: nil, repeats: true)
+        RunLoop.main.add(cycleTimer!, forMode: .common)
+    }
+    
+    private func removeCycleTimer() {
+        cycleTimer?.invalidate()
+        cycleTimer = nil
+    }
+    
+    @objc private func scrollToNext(){
+        
+        let currentOffsetX = collectionView.contentOffset.x
+        let offsetX = currentOffsetX + collectionView.bounds.width
+        // 滚动到位置
+        collectionView.setContentOffset(CGPoint(x: offsetX, y: 0), animated: true)
+        
+    }
 }
