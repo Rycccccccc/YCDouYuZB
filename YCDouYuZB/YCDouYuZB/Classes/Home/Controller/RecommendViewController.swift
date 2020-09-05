@@ -15,6 +15,8 @@ private let kNormalItemH = kItemW * 3 / 4
 private let kPrettyItemH = kItemW * 4 / 3
 private let kHeaderViewH: CGFloat = 50
 
+private let kCycleViewH = kScreenW * 3 / 8
+
 private let kNormalCellID = "kNormalCellID"
 private let kPrettyCellID = "kPrettyCellID"
 private let kHeaderViewID = "kHeaderViewID"
@@ -47,7 +49,11 @@ class RecommendViewController: UIViewController {
         return collectionView
         
     }()
-    
+    private lazy var cycleView: RecommendCycleView = {
+        let cycleView = RecommendCycleView.recommendCycleView()
+        cycleView.frame = CGRect(x: 0, y: -kCycleViewH, width: kScreenW, height: kCycleViewH)
+        return cycleView
+    }()
     
     // MARK: - 系统回调函数
     override func viewDidLoad() {
@@ -60,6 +66,11 @@ class RecommendViewController: UIViewController {
         loadData()
   
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+    }
 
 }
 
@@ -70,6 +81,13 @@ extension RecommendViewController {
     private func setupUI() {
         // 1. 将UICollectionView 添加到控制器View 中
         view.addSubview(collectionView)
+        
+        // 2. 将CycleView 添加到UICollectionView 中
+        collectionView.addSubview(cycleView)
+        
+        // 3. 设置collectionView的内边距
+        collectionView.contentInset = UIEdgeInsets(top: kCycleViewH, left: 0, bottom: 0, right: 0)
+        
     }
     
 }
@@ -77,22 +95,22 @@ extension RecommendViewController {
 // MARK: - 发送网络请求
 extension RecommendViewController {
     
-    
     private func loadData() {
-        
-        recommendVM.requestData { [weak self] in
-            
+    
+        // 1. 请求推荐数据
+        recommendVM.requestData {
             DispatchQueue.main.async {
-                self?.collectionView.reloadData()
+                self.collectionView.reloadData()
             }
-            
-            
+        }
+        
+        // 2.请求轮播数据
+        recommendVM.requestCycleData {
+            self.cycleView.cycleModels = self.recommendVM.cycleModels
         }
     }
     
 }
-
-
 
 // MARK: - 遵守UICollectionViewDataSource ,UICollectionViewDelegateFlowLayout协议
 extension RecommendViewController: UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{

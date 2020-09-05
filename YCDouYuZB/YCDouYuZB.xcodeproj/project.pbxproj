@@ -31,6 +31,11 @@
 		052E1C5624FF941600EF6CF2 /* AnchorGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052E1C5524FF941600EF6CF2 /* AnchorGroup.swift */; };
 		052E1C5824FF961D00EF6CF2 /* AnchorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052E1C5724FF961D00EF6CF2 /* AnchorModel.swift */; };
 		05345BB72500824600B9A3CB /* CollectionBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05345BB62500824600B9A3CB /* CollectionBaseCell.swift */; };
+		05345BB925008FDF00B9A3CB /* RecommendCycleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05345BB825008FDF00B9A3CB /* RecommendCycleView.swift */; };
+		05345BBB2500900100B9A3CB /* RecommendCycleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05345BBA2500900100B9A3CB /* RecommendCycleView.xib */; };
+		05345BBF2502697200B9A3CB /* CycleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05345BBE2502697200B9A3CB /* CycleModel.swift */; };
+		05345BC22502705400B9A3CB /* CollectionCycleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05345BC02502705400B9A3CB /* CollectionCycleCell.swift */; };
+		05345BC32502705400B9A3CB /* CollectionCycleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05345BC12502705400B9A3CB /* CollectionCycleCell.xib */; };
 		05E3104E24FCFF5200552629 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E3104D24FCFF5200552629 /* AppDelegate.swift */; };
 		05E3105524FCFF5200552629 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05E3105324FCFF5200552629 /* Main.storyboard */; };
 		05E3105724FCFF5400552629 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05E3105624FCFF5400552629 /* Assets.xcassets */; };
@@ -85,6 +90,11 @@
 		052E1C5524FF941600EF6CF2 /* AnchorGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnchorGroup.swift; sourceTree = "<group>"; };
 		052E1C5724FF961D00EF6CF2 /* AnchorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnchorModel.swift; sourceTree = "<group>"; };
 		05345BB62500824600B9A3CB /* CollectionBaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionBaseCell.swift; sourceTree = "<group>"; };
+		05345BB825008FDF00B9A3CB /* RecommendCycleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendCycleView.swift; sourceTree = "<group>"; };
+		05345BBA2500900100B9A3CB /* RecommendCycleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecommendCycleView.xib; sourceTree = "<group>"; };
+		05345BBE2502697200B9A3CB /* CycleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CycleModel.swift; sourceTree = "<group>"; };
+		05345BC02502705400B9A3CB /* CollectionCycleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCycleCell.swift; sourceTree = "<group>"; };
+		05345BC12502705400B9A3CB /* CollectionCycleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionCycleCell.xib; sourceTree = "<group>"; };
 		05E3104A24FCFF5200552629 /* YCDouYuZB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YCDouYuZB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05E3104D24FCFF5200552629 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05E3105424FCFF5200552629 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -142,6 +152,10 @@
 			children = (
 				052E1C3F24FF458800EF6CF2 /* CollectionHeaderView.swift */,
 				052E1C4024FF458800EF6CF2 /* CollectionHeaderView.xib */,
+				05345BB825008FDF00B9A3CB /* RecommendCycleView.swift */,
+				05345BBA2500900100B9A3CB /* RecommendCycleView.xib */,
+				05345BC02502705400B9A3CB /* CollectionCycleCell.swift */,
+				05345BC12502705400B9A3CB /* CollectionCycleCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -217,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				052E1C4F24FF8B5400EF6CF2 /* RecommendViewModel.swift */,
+				05345BBE2502697200B9A3CB /* CycleModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -480,6 +495,8 @@
 				052E1C4A24FF693500EF6CF2 /* CollectionViewPrettyCell.xib in Resources */,
 				0503B39524FD0FEB00868538 /* Home.storyboard in Resources */,
 				052E1C4624FF48F100EF6CF2 /* CollectionViewNormalCell.xib in Resources */,
+				05345BBB2500900100B9A3CB /* RecommendCycleView.xib in Resources */,
+				05345BC32502705400B9A3CB /* CollectionCycleCell.xib in Resources */,
 				0503B3AC24FD130B00868538 /* Follow.storyboard in Resources */,
 				0503B3A024FD10FD00868538 /* Profile.storyboard in Resources */,
 				0503B3A924FD12F600868538 /* Live.storyboard in Resources */,
@@ -599,6 +616,7 @@
 				0503B3BD24FD2DA100868538 /* UIBarButtonItem-Extension.swift in Sources */,
 				0503B3B024FD25D400868538 /* MainViewController.swift in Sources */,
 				0503B3C524FD4A8F00868538 /* UIColor+Extension.swift in Sources */,
+				05345BBF2502697200B9A3CB /* CycleModel.swift in Sources */,
 				052E1C4524FF48F100EF6CF2 /* CollectionViewNormalCell.swift in Sources */,
 				0503B3C324FD484300868538 /* PageContentView.swift in Sources */,
 				05E3104E24FCFF5200552629 /* AppDelegate.swift in Sources */,
@@ -609,8 +627,10 @@
 				0503B3B824FD28DD00868538 /* HomeViewController.swift in Sources */,
 				052E1C4924FF693500EF6CF2 /* CollectionViewPrettyCell.swift in Sources */,
 				0503B3C124FD379C00868538 /* Common.swift in Sources */,
+				05345BB925008FDF00B9A3CB /* RecommendCycleView.swift in Sources */,
 				052E1C5024FF8B5400EF6CF2 /* RecommendViewModel.swift in Sources */,
 				052E1C5824FF961D00EF6CF2 /* AnchorModel.swift in Sources */,
+				05345BC22502705400B9A3CB /* CollectionCycleCell.swift in Sources */,
 				052E1C3E24FF3BC600EF6CF2 /* RecommendViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -13,6 +13,7 @@ class RecommendViewModel {
     
     // MARK: - 懒加载属性
     lazy var anchorGroups: [AnchorGroup] = [AnchorGroup]()
+    lazy var cycleModels: [CycleModel] = [CycleModel]()
     private lazy var bigDataGroups: AnchorGroup = AnchorGroup()
     private lazy var prettyGroups: AnchorGroup = AnchorGroup()
     
@@ -22,6 +23,7 @@ class RecommendViewModel {
 // MARK: - 发送网络请求
 extension RecommendViewModel {
     
+    // 请求推荐数据
     func requestData(finishCallBack: @escaping ()-> ()) {
         
         // 0. 定义参数
@@ -105,4 +107,20 @@ extension RecommendViewModel {
         }
     }
     
+    // 请求无线轮播数据
+    func requestCycleData(finishCallBack: @escaping ()-> ()) {
+        
+        // http://www.douyutv.com/api/v1/slide/?version&2.300
+        NetworkTools.requestData(.GET, URLString: "http://www.douyutv.com/api/v1/slide/", parameters: ["version":"2.300"]) { (result) in
+            
+            // 1. 将result 转成字典类型
+            guard let resultDict = result as? [String : NSObject] else { return }
+            // 2. 根据data获取key, 获取数组
+            guard let dataArray =  resultDict["data"] as? [[String : NSObject]] else { return }
+            
+            self.cycleModels =  dataArray.kj.modelArray(CycleModel.self)
+            
+            finishCallBack()
+        }
+    }
 }
