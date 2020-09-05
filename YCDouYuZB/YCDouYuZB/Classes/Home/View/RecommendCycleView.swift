@@ -22,6 +22,9 @@ class RecommendCycleView: UIView {
             // 设置pageControl 的个数
             pageControl.numberOfPages = cycleModels?.count ?? 0
             
+            // 3. 默认滚动到中间的位置
+            let indexPath = NSIndexPath(item: (cycleModels?.count ?? 0) * 100, section: 0)
+            collectionView.scrollToItem(at: indexPath as IndexPath, at: .left, animated: false)
         }
     }
     
@@ -61,12 +64,12 @@ extension RecommendCycleView {
 extension RecommendCycleView: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return cycleModels?.count ?? 0
+        return (cycleModels?.count ?? 0) * 10000
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cycleModel = cycleModels![indexPath.item]
+        let cycleModel = cycleModels![indexPath.item % cycleModels!.count]
         
         let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: kCycleCellID, for: indexPath) as! CollectionCycleCell
         
@@ -87,7 +90,9 @@ extension RecommendCycleView: UICollectionViewDelegate {
         // 1. 获取滚动的偏移量
         let offsetX = scrollView.contentOffset.x + scrollView.bounds.width * 0.5
         // 2. 计算pageControl 的currentIndex
-        pageControl.currentPage = Int(offsetX / scrollView.bounds.width)
+        pageControl.currentPage = Int(offsetX / scrollView.bounds.width) % (cycleModels?.count ?? 1)
     }
+    
+    
     
 }
